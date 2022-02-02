@@ -2,9 +2,8 @@
 
 body {
     text-align: center;
-    background-image: url("./background.webp");
-    background-size: cover;
     font-family:'Roboto', sans-serif;
+    background-color: bisque;
 }
 
 #container-geral {
@@ -17,15 +16,15 @@ body {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    width: 10px;
+    width: 7px;
     background: black;
-    height: 400px;
+    height: 230px;
     margin: 5px;
 }
 
 .disco {
-    height: 80px;
-    margin-top: 2px;
+    height: 40px;
+    margin-top: 1px;
     border-radius: 10px ;
     border: 1px solid  black;
 }
@@ -36,31 +35,31 @@ body {
 
 .red{
     background: red;
-    width: 300px;
+    width: 110px;
 
 }
 
 .green{
     background: green;
-    width: 240px;
+    width: 85px;
 
 }
 
 .purple{
     background: purple;
-    width: 180px;
+    width: 70px;
 
 }
 
 .blue{
     background: blue;
-    width: 120px;
+    width: 50px;
 
 }
 
 .yellow {
     background: yellow;
-    width: 80px;
+    width: 30px;
 }
 
 #reset-button {
@@ -74,6 +73,46 @@ body {
 #legendas {
     display: flex;
     justify-content: space-around;
-    font-size: 30px;
+    font-size: 20px;
 }
 
+@media screen and (min-width:769px){
+    body{
+        background-image: url("./background.webp");
+        background-size: cover;
+    }
+    .torre { 
+        width: 10px;
+        height: 400px;
+        margin: 5px;
+    }
+
+    .disco {
+        height: 80px;
+        margin-top: 2px;
+    }
+
+    .red{
+        width: 300px;
+    }
+    
+    .green{
+        width: 240px;
+    }
+    
+    .purple{
+        width: 180px;
+    }
+    
+    .blue{
+        width: 120px;
+    }
+    
+    .yellow {
+        width: 80px;
+    }
+
+    #legendas {
+        font-size: 30px;
+    }
+}

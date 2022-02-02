@@ -54,31 +54,34 @@ function resetGame(){
 
     barras.forEach(barra => barra.innerHTML = "")
 
-    if( dificuldade > 4 ){
+    if( dificuldade > 3 ){
         const vermelho = document.createElement("div")
         vermelho.classList.add("red","disco")
         barras[0].appendChild(vermelho)
     }
-    if( dificuldade > 3){
-        const verde = document.createElement("div")
-        verde.classList.add("green", "disco")
-        barras[0].appendChild(verde)
-    }
-
+    const verde = document.createElement("div")
+    verde.classList.add("green", "disco")
+    barras[0].appendChild(verde)
+    
     const roxo = document.createElement("div")
     roxo.classList.add("purple", "disco")
-
+    
     const azul = document.createElement("div")
     azul.classList.add("blue", "disco")
-
-    const amarelo = document.createElement("div")
-    amarelo.classList.add("yellow", "disco")
-
+    
+    
     barras[0].appendChild(roxo)
     barras[0].appendChild(azul)
-    barras[0].appendChild(amarelo)
-
+    
+    if( dificuldade > 4){
+        const amarelo = document.createElement("div")
+        amarelo.classList.add("yellow", "disco")
+        barras[0].appendChild(amarelo)
+    }
+    
     comemoracao.classList.add("hidden")
+    count = 0
+    counter.innerText = "Movimentos: "
     
 }
 
