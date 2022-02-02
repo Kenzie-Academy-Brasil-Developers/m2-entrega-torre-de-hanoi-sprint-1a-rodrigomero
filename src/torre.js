@@ -1,9 +1,9 @@
-/* VARIAVEIS GLOBAIS
+/* VARIAVEIS GLOBAIS */
 const barras = document.querySelectorAll(".torre")
 const container = document.getElementById("container-geral")
 let hold = null
-*/
 
+//corrigir quando clicar numa barra vazia, nao fazer nada
 for(let i = 0;i<barras.length;i++){
     barras[i].addEventListener("click", function(event){
         let alvo = event.currentTarget
