@@ -9,17 +9,33 @@
 </head>
 <body>
     <h1>Torre de Hanoi</h1>
+    <form>
+        
+        <input type="radio" name="dificuldade" id="facil" value="3">
+        <label for="facil">Fácil</label>
+
+        <input type="radio" name="dificuldade" id="medio" value="4" checked>
+        <label for="medio">Médio</label>
+
+        <input type="radio" name="dificuldade" id="dificil" value="5">
+        <label for="dificil">Difícil</label>
+
+    </form>
+    <div> 
+        <span id = "counter">Movimentos: </span>
+    </div>
+    <button id="reset-button"> Recomeçar </button>
     <div id="container-geral">
-        <div id="esquerda" class="torre">
-            <div class="disco red"></div>
-            <div class="disco green"></div>
-            <div class="disco purple"></div>
-            <div class="disco blue"></div>
-        </div>
-        <div id="centro" class="torre">
-        </div>
+        <div id="esquerda" class="torre"></div>
+        <div id="centro" class="torre"></div>
         <div id="direita" class="torre"></div>
     </div>
-    <script src="./src/torre.js"></script>
+    <section id="legendas">
+        <span>Start</span>
+        <span>Offset</span>
+        <span>End</span>
+    </section>
+    <h2 class="hidden">PARABÉNS VOCÊ GANHOU</h2>
+    <script src="./src/torre.js" style = "font-size: 10px;"></script>
 </body>
 </html>

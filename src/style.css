@@ -1,4 +1,11 @@
-/* red green purple blue */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    text-align: center;
+    background-image: url("./background.webp");
+    background-size: cover;
+    font-family:'Roboto', sans-serif;
+}
 
 #container-geral {
     display: flex;
@@ -50,3 +57,23 @@
     width: 120px;
 
 }
+
+.yellow {
+    background: yellow;
+    width: 80px;
+}
+
+#reset-button {
+    margin-top: 40px;
+}
+
+.hidden{
+    display: none;
+}
+
+#legendas {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+}
+
