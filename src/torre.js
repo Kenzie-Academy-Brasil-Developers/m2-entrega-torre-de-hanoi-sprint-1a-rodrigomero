@@ -1,6 +1,14 @@
-/* VARIAVEIS GLOBAIS */
-const barras = document.querySelectorAll(".torre")
 const container = document.getElementById("container-geral")
+for(let i = 0;i<3;i++){
+    const barra = document.createElement("div")
+    barra.classList.add("torre")
+    container.appendChild(barra)
+}
+const barras = document.querySelectorAll(".torre")
+barras[0].id = "start"
+barras[1].id = "offset"
+barras[2].id = "end"
+
 const resetButton = document.getElementById("reset-button")
 const comemoracao = document.querySelector("h2")
 let hold = null
