@@ -24,18 +24,24 @@ container.addEventListener("click", function(event){
     if(hold == null && alvo.childElementCount == 0){
         
     }else if(hold == null){
+
         hold = alvo.lastElementChild
+        if(barras[0].hasChildNodes() && barras[1].hasChildNodes() && barras[2].hasChildNodes()){
+
+            if(hold.clientWidth >= barras[0].lastElementChild.clientWidth && hold.clientWidth >= barras[1].lastElementChild.clientWidth && hold.clientWidth >= barras[2].lastElementChild.clientWidth){
+                
+                hold = null
+            }
+        }
+
     }else if(alvo.childElementCount == 0 || hold.clientWidth < alvo.lastElementChild.clientWidth){
         alvo.appendChild(hold)
         hold = null
         count++
         counter.innerText = "Movimentos: " + count
+        checkWin(barras[2])
     }
-    if(hold.clientWidth >= barras[0].lastElementChild.clientWidth && hold.clientWidth >= barras[1].lastElementChild.clientWidth && hold.clientWidth >= barras[2].lastElementChild.clientWidth){
-        console.log("travou")
-        hold = null
-    }
-    checkWin(barras[2])
+    
 })
 
 function checkWin(ultimaBarra){
@@ -82,7 +88,7 @@ function resetGame(){
     comemoracao.classList.add("hidden")
     count = 0
     counter.innerText = "Movimentos: "
-    
+    hold = null
 }
 
 resetGame()
