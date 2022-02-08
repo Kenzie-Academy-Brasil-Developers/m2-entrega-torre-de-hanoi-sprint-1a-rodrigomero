@@ -20,29 +20,31 @@ resetButton.addEventListener("click", resetGame)
 
 container.addEventListener("click", function(event){
     let alvo = event.target.closest(".torre")
-    
-    if(hold == null && alvo.childElementCount == 0){
-        
-    }else if(hold == null){
+    if ( alvo != null){
 
-        hold = alvo.lastElementChild
-        if(barras[0].hasChildNodes() && barras[1].hasChildNodes() && barras[2].hasChildNodes()){
-
-            if(hold.clientWidth >= barras[0].lastElementChild.clientWidth && hold.clientWidth >= barras[1].lastElementChild.clientWidth && hold.clientWidth >= barras[2].lastElementChild.clientWidth){
+        if(hold == null && alvo.childElementCount == 0){
+            
+        }else if(hold == null){
+            
+            hold = alvo.lastElementChild
+            if(barras[0].hasChildNodes() && barras[1].hasChildNodes() && barras[2].hasChildNodes()){
                 
-                hold = null
+                if(hold.clientWidth >= barras[0].lastElementChild.clientWidth && hold.clientWidth >= barras[1].lastElementChild.clientWidth && hold.clientWidth >= barras[2].lastElementChild.clientWidth){
+                    
+                    hold = null
+                }
             }
+            
+        }else if(alvo.childElementCount == 0 || hold.clientWidth < alvo.lastElementChild.clientWidth){
+            alvo.appendChild(hold)
+            hold = null
+            count++
+            counter.innerText = "Movimentos: " + count
+            checkWin(barras[2])
         }
-
-    }else if(alvo.childElementCount == 0 || hold.clientWidth < alvo.lastElementChild.clientWidth){
-        alvo.appendChild(hold)
-        hold = null
-        count++
-        counter.innerText = "Movimentos: " + count
-        checkWin(barras[2])
+        
     }
-    
-})
+    })
 
 function checkWin(ultimaBarra){
     if(ultimaBarra.childElementCount == dificuldade){
